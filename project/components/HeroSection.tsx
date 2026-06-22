@@ -31,7 +31,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-screen min-h-[100svh] flex items-center justify-center overflow-hidden bg-[#050816]"
+      className="relative min-h-[110vh] min-h-[110svh] flex items-center justify-center overflow-hidden bg-[#050816]"
     >
       {/* Canvas background */}
       <div className="absolute inset-0 z-0">
@@ -48,7 +48,7 @@ export default function HeroSection() {
       <motion.div
         style={{ y, opacity }}
         // Line 52 — add more pb
-        className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-32 sm:pt-32 sm:pb-40"
+        className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-40 sm:pt-32 sm:pb-48"
       >
         {/* Organizer badge */}
         <motion.div
