@@ -72,16 +72,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex flex-col items-center gap-3"
             >
-              <div className="relative w-20 sm:w-24 h-20 sm:h-24">
-                <Image
-                  src="/project/public/images/logos/AIclub3d.png"
-                  alt="DatAInspire"
-                  fill
-                  className="object-contain drop-shadow-[0_0_24px_rgba(0,245,255,0.35)]"
-                  sizes="96px"
-                  priority
-                />
-              </div>
+              
               <div className="text-center">
                 <div
                   className="font-black text-white tracking-widest leading-none"
