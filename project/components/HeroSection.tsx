@@ -182,7 +182,7 @@ export default function HeroSection() {
                 className="font-bold text-cyan-400 mb-0.5 sm:mb-1"
                 style={{
                   fontFamily: 'Orbitron, sans-serif',
-                  fontSize: 'clamp(1.2rem, 4vw, 2rem)',
+                  fontSize: 'clamp(1rem, 3.5vw, 2rem)',
                 }}
               >
                 {value}
