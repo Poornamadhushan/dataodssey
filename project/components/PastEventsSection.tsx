@@ -23,13 +23,13 @@ const PHOTOS = [
     src: '/Picture3.jpg',
     alt: 'Data Odyssey 2025 — Champions: CartConnect Team',
     caption: 'Certificate Presentation',
-    tag: '1st runner Up',
+    tag: '1st Runner Up',
   },
   {
     src: '/a4bbb096-1856-4768-82de-029701235593.jpg',
     alt: 'Data Odyssey 2025 — 1st Runner Up: NeuroBloom',
     caption: 'Certificate Presentation ',
-    tag: '1st Runner Up',
+    tag: 'Champion',
   },
   {
     src: '/80f8c12f-0909-4677-8450-4239b12aa1b2.jpg',
