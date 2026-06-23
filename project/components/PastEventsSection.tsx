@@ -274,7 +274,7 @@ export default function PastEventsSection() {
           >
             {/* View more photos — opens lightbox on last photo / can be hyperlinked */}
             <a
-              href="#"
+              href="https://fmsh.kdu.ac.lk/department-of-languages/news/data-odyssey-2025-a-milestone-in-data-driven-innovation/"
               onClick={(e) => { e.preventDefault(); openLightbox(0); }}
               className="group flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 text-sm font-semibold text-white/80 hover:text-white glass-card border border-white/[0.1] hover:border-cyan-500/30 rounded-xl transition-all duration-300 hover:bg-white/[0.03]"
             >
