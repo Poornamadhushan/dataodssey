@@ -9,36 +9,35 @@ interface AIDemoModalProps {
   onClose: () => void;
 }
 
-// Files in /public are served from the web root, but this site is deployed
-// to GitHub Pages under a subpath (basePath), e.g.
-// https://poornamadhushan.github.io/dataodssey/
-// so the asset URL must include that prefix in production.
-// Raw string src on a plain <video> tag is NOT automatically rewritten by
-// Next's basePath (unlike next/image or next/link), so we prefix it
-// manually using an env var that mirrors next.config.js's basePath.
-//
-// Simpler alternative if you don't want the env var: just hardcode it as
-//   const VIDEO_PATH = '/dataodssey/videos/introVideo.mp4';
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const VIDEO_PATH = `${BASE_PATH}/videos/introVideo.mp4`;
+// GitHub Pages repo name
+const VIDEO_PATH = '/dataodssey/videos/introVideo.mp4';
 
-export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
+export default function AIDemoModal({
+  isOpen,
+  onClose,
+}: AIDemoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);
 
-  // Play/pause/reset whenever the modal opens or closes.
   useEffect(() => {
     const video = videoRef.current;
+
     if (!video) return;
 
     if (isOpen) {
       setVideoError(false);
+
       video.currentTime = 0;
-      // play() returns a promise that rejects if autoplay is blocked or
-      // the source 404s. We only treat real load failures as errors via
-      // onError below — this catch just stops an unhandled rejection
-      // from showing up in the console for benign autoplay blocks.
-      video.play().catch(() => {});
+
+      const playVideo = async () => {
+        try {
+          await video.play();
+        } catch (err) {
+          console.log('Autoplay prevented:', err);
+        }
+      };
+
+      playVideo();
     } else {
       video.pause();
       video.currentTime = 0;
@@ -54,7 +53,9 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[9000] flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
           onClick={(e) => {
-            if (e.target === e.currentTarget) onClose();
+            if (e.target === e.currentTarget) {
+              onClose();
+            }
           }}
         >
           <motion.div
@@ -65,11 +66,13 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
             className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-black border border-cyan-500/30 shadow-[0_0_80px_rgba(0,245,255,0.15)]"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
               <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs tracking-widest">
                 <Play className="w-4 h-4" />
                 AI DEMO INTRO
               </div>
+
               <button
                 onClick={onClose}
                 className="text-white/60 hover:text-white transition"
@@ -78,30 +81,37 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
               </button>
             </div>
 
+            {/* Video Area */}
             <div className="relative aspect-video bg-black">
               {videoError ? (
-                <div className="flex flex-col items-center justify-center h-full text-white/60 p-4 text-center">
-                  <p className="text-red-400 mb-2 text-lg">⚠️ Video failed to load</p>
-                  <p className="text-sm mb-2">Expected location:</p>
-                  <code className="bg-white/10 px-3 py-1 rounded text-cyan-400 text-xs mb-4">
-                    public{VIDEO_PATH}
-                  </code>
-                  <p className="text-xs text-white/40 max-w-md mb-4">
-                    Make sure the file exists at that path in your repo and has
-                    been committed/pushed. After deploying, you can also check{' '}
-                    <code className="text-cyan-400">yourdomain.com{VIDEO_PATH}</code>{' '}
-                    directly in the browser to confirm it loads.
+                <div className="flex flex-col items-center justify-center h-full text-center p-6">
+                  <p className="text-red-400 text-xl mb-3">
+                    ⚠️ Video failed to load
                   </p>
+
+                  <p className="text-white/60 mb-2">
+                    Expected URL:
+                  </p>
+
+                  <code className="bg-white/10 px-3 py-2 rounded text-cyan-400 text-sm">
+                    {VIDEO_PATH}
+                  </code>
+
+                  <p className="text-white/40 text-sm mt-4 max-w-md">
+                    Verify that the file exists in:
+                    <br />
+                    public/videos/introVideo.mp4
+                  </p>
+
                   <button
                     onClick={() => {
                       setVideoError(false);
-                      const video = videoRef.current;
-                      if (video) {
-                        video.load();
-                        video.play().catch(() => {});
+
+                      if (videoRef.current) {
+                        videoRef.current.load();
                       }
                     }}
-                    className="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded-lg transition"
+                    className="mt-5 px-4 py-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400"
                   >
                     Retry
                   </button>
@@ -111,11 +121,18 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
                   ref={videoRef}
                   src={VIDEO_PATH}
                   className="w-full h-full object-cover"
+                  controls
+                  autoPlay
                   muted
                   playsInline
-                  controls
                   preload="auto"
-                  onError={() => setVideoError(true)}
+                  onLoadedData={() =>
+                    console.log('Video loaded successfully')
+                  }
+                  onError={(e) => {
+                    console.error('Video load error:', e);
+                    setVideoError(true);
+                  }}
                 />
               )}
             </div>
