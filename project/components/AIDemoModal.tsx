@@ -12,13 +12,33 @@ interface AIDemoModalProps {
 export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Auto-play when modal opens
+  // ▶️ Auto play video when modal opens
   useEffect(() => {
-    if (isOpen && videoRef.current) {
+    if (!isOpen) return;
+
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = async () => {
+      try {
+        video.muted = true; // REQUIRED for autoplay
+        video.playsInline = true;
+        video.currentTime = 0;
+
+        await video.play();
+      } catch (err) {
+        console.log('Autoplay failed:', err);
+      }
+    };
+
+    playVideo();
+  }, [isOpen]);
+
+  // 🧹 Stop video when closing modal
+  useEffect(() => {
+    if (!isOpen && videoRef.current) {
+      videoRef.current.pause();
       videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {
-        // autoplay might be blocked if not muted
-      });
     }
   }, [isOpen]);
 
@@ -29,17 +49,19 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9000] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+          transition={{ duration: 0.25 }}
+          className="fixed inset-0 z-[9000] flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
         >
+          {/* Modal box */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="relative w-full max-w-4xl rounded-2xl overflow-hidden bg-black border border-cyan-500/30 shadow-[0_0_80px_rgba(0,245,255,0.15)]"
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-black border border-cyan-500/30 shadow-[0_0_80px_rgba(0,245,255,0.15)]"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
@@ -50,7 +72,7 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
 
               <button
                 onClick={onClose}
-                className="text-white/60 hover:text-white"
+                className="text-white/60 hover:text-white transition"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -60,7 +82,7 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
             <div className="relative aspect-video bg-black">
               <video
                 ref={videoRef}
-                src="/vidoe/introvideo.mp4"
+                src="/videos/introVideo.mp4"
                 className="w-full h-full object-cover"
                 autoPlay
                 muted
