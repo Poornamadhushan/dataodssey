@@ -9,9 +9,18 @@ interface AIDemoModalProps {
   onClose: () => void;
 }
 
-// Files in /public are served from the web root.
-// project/public/videos/introVideo.mp4  ->  /videos/introVideo.mp4
-const VIDEO_PATH = '/videos/introVideo.mp4';
+// Files in /public are served from the web root, but this site is deployed
+// to GitHub Pages under a subpath (basePath), e.g.
+// https://poornamadhushan.github.io/dataodssey/
+// so the asset URL must include that prefix in production.
+// Raw string src on a plain <video> tag is NOT automatically rewritten by
+// Next's basePath (unlike next/image or next/link), so we prefix it
+// manually using an env var that mirrors next.config.js's basePath.
+//
+// Simpler alternative if you don't want the env var: just hardcode it as
+//   const VIDEO_PATH = '/dataodssey/videos/introVideo.mp4';
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const VIDEO_PATH = `${BASE_PATH}/videos/introVideo.mp4`;
 
 export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
