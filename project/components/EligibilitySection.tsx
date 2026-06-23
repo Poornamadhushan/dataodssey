@@ -205,7 +205,7 @@ export default function EligibilitySection() {
                   AI Demo
                 </h4>
                 <p className="text-xs sm:text-sm text-white/50 mb-3 sm:mb-4">
-                  Try our live AI emotion & personality insights experience — powered by your webcam.
+                  view our demo viedio
                 </p>
               </div>
 
