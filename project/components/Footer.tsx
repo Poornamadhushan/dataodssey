@@ -21,9 +21,9 @@ const NAV_LINKS = [
 ];
 
 const SOCIAL = [
-  { icon: Linkedin, label: 'LinkedIn', href: '#', hoverClass: 'hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/20' },
-  { icon: Facebook, label: 'Facebook', href: '#', hoverClass: 'hover:text-blue-500 hover:bg-blue-600/10 hover:border-blue-600/20' },
-  { icon: Instagram, label: 'Instagram', href: '#', hoverClass: 'hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-500/20' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/kdudatainspire/', hoverClass: 'hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/20' },
+  { icon: Facebook, label: 'Facebook', href: 'https://web.facebook.com/datasciensekdu', hoverClass: 'hover:text-blue-500 hover:bg-blue-600/10 hover:border-blue-600/20' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/datainspires_kdu', hoverClass: 'hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-500/20' },
 ];
 
 export default function Footer() {
@@ -87,7 +87,7 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>Email</h4>
               <p className="text-xs text-white/40 mb-2 sm:mb-3">Primary contact</p>
               <a href="mailto:dataodyssey2026@kdu.ac.lk" className="text-xs sm:text-sm text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1 group/lnk">
-                <span className="truncate">dataodyssey2026@kdu.ac.lk</span>
+                <span className="truncate">datainspire@kdu.ac.lk</span>
                 <ExternalLink className="w-3 h-3 opacity-0 group-hover/lnk:opacity-100 transition-opacity shrink-0" />
               </a>
             </motion.div>
@@ -106,7 +106,10 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>Phone</h4>
               <p className="text-xs text-white/40 mb-2 sm:mb-3">Available during office hours</p>
               <a href="tel:+94112345678" className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group/lnk">
-                <span>+94 11 234 5678</span>
+                <span>Sanjaya - 070 481 7106
+                      Ravindu - 076 662 1241 
+                      Vidushi - 077 265 7488
+                </span>
                 <ExternalLink className="w-3 h-3 opacity-0 group-hover/lnk:opacity-100 transition-opacity shrink-0" />
               </a>
             </motion.div>
