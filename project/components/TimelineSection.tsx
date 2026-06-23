@@ -192,7 +192,7 @@ export default function TimelineSection() {
                       {isLive && (
                         <span className="flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
                           <span className="w-1 h-1 rounded-full bg-cyan-400 animate-pulse" />
-                          OPENS IN 3 DAYS
+                          OPEN
                         </span>
                       )}
                       {isPast && (
