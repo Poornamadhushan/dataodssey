@@ -105,14 +105,20 @@ export default function Footer() {
               </div>
               <h4 className="text-sm font-semibold text-white mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>Phone</h4>
               <p className="text-xs text-white/40 mb-2 sm:mb-3">Available during office hours</p>
-              <a href="tel:0704817106" className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group/lnk">
-                <span>
-                  Sanjaya - 070 481 7106<br />
-                  Ravindu - 076 662 1241<br />
-                  Vidushi - 077 265 7488
-                </span>
-                <ExternalLink className="w-3 h-3 opacity-0 group-hover/lnk:opacity-100 transition-opacity shrink-0" />
-              </a>
+              <div className="text-xs sm:text-sm text-blue-400 space-y-1">
+                <a href="tel:+94704817106" className="hover:text-blue-300 transition-colors flex items-center gap-1 group/lnk">
+                  <span>Sanjaya - 070 481 7106</span>
+                  <ExternalLink className="w-3 h-3 opacity-0 group-hover/lnk:opacity-100 transition-opacity shrink-0" />
+                </a>
+                <a href="tel:+94766621241" className="hover:text-blue-300 transition-colors flex items-center gap-1 group/lnk">
+                  <span>Ravindu - 076 662 1241</span>
+                  <ExternalLink className="w-3 h-3 opacity-0 group-hover/lnk:opacity-100 transition-opacity shrink-0" />
+                </a>
+                <a href="tel:+94772657488" className="hover:text-blue-300 transition-colors flex items-center gap-1 group/lnk">
+                  <span>Vidushi - 077 265 7488</span>
+                  <ExternalLink className="w-3 h-3 opacity-0 group-hover/lnk:opacity-100 transition-opacity shrink-0" />
+                </a>
+              </div>
             </motion.div>
 
             {/* Address */}
