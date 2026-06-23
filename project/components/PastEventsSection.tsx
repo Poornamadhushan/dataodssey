@@ -272,17 +272,7 @@ export default function PastEventsSection() {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           >
-            {/* View more photos — opens lightbox on last photo / can be hyperlinked */}
-            <a
-              href="https://fmsh.kdu.ac.lk/department-of-languages/news/data-odyssey-2025-a-milestone-in-data-driven-innovation/"
-              onClick={(e) => { e.preventDefault(); openLightbox(0); }}
-              className="group flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 text-sm font-semibold text-white/80 hover:text-white glass-card border border-white/[0.1] hover:border-cyan-500/30 rounded-xl transition-all duration-300 hover:bg-white/[0.03]"
-            >
-              <Images className="w-4 h-4 text-cyan-400 shrink-0" />
-              View All Photos
-              <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-
+          
             {/* View Event Details — placeholder hyperlink */}
             <a
               href="https://fmsh.kdu.ac.lk/department-of-languages/news/data-odyssey-2025-a-milestone-in-data-driven-innovation/"
