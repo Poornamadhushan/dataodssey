@@ -10,32 +10,32 @@ const PHOTOS = [
   {
     src: '/Picture1-1.jpg',
     alt: 'Data Odyssey 2025 — Award Ceremony with Chief Guest',
-    caption: 'Award Ceremony',
-    tag: 'Ceremony',
+    caption: 'Certificate Presentation',
+    tag: 'Champion',
   },
   {
     src: '/Picture2.jpg',
     alt: 'Data Odyssey 2025 — Certificate Presentation to Winners',
     caption: 'Certificate Presentation',
-    tag: 'Winners',
+    tag: '1st Runner Up',
   },
   {
     src: '/Picture3.jpg',
     alt: 'Data Odyssey 2025 — Champions: CartConnect Team',
-    caption: 'Champions — CartConnect',
-    tag: 'Champions',
+    caption: 'Certificate Presentation',
+    tag: '1st runner Up',
   },
   {
     src: '/a4bbb096-1856-4768-82de-029701235593.jpg',
     alt: 'Data Odyssey 2025 — 1st Runner Up: NeuroBloom',
-    caption: '1st Runner Up — NeuroBloom',
+    caption: 'Certificate Presentation ',
     tag: '1st Runner Up',
   },
   {
     src: '/80f8c12f-0909-4677-8450-4239b12aa1b2.jpg',
     alt: 'Data Odyssey 2025 — 1st Runner Up: DineFlow',
-    caption: '1st Runner Up — DineFlow',
-    tag: '1st Runner Up',
+    caption: 'Certificate Presentation',
+    tag: 'Champion',
   },
 ];
 
