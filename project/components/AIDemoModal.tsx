@@ -15,7 +15,7 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const [retryCount, setRetryCount] = useState(0);
 
   // Your exact file path
-  const VIDEO_PATH = 'dataodssey/project/public/videos/introVideo.mp4';
+  const VIDEO_PATH = '/videos/introVideo.mp4';
 
   useEffect(() => {
     if (!isOpen) return;
