@@ -105,7 +105,7 @@ export default function Footer() {
               </div>
               <h4 className="text-sm font-semibold text-white mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>Phone</h4>
               <p className="text-xs text-white/40 mb-2 sm:mb-3">Available during office hours</p>
-              <a href="tel:+94112345678" className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group/lnk">
+              <a href="tel:070 481 7106" className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group/lnk">
                 <span>Sanjaya - 070 481 7106<br>
                 </br></>Ravindu - 076 662 1241 <br>
                 </br>Vidushi - 077 265 7488
