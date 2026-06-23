@@ -9,95 +9,31 @@ interface AIDemoModalProps {
   onClose: () => void;
 }
 
+// Files in /public are served from the web root.
+// project/public/videos/introVideo.mp4  ->  /videos/introVideo.mp4
+const VIDEO_PATH = '/videos/introVideo.mp4';
+
 export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);
-  const [retryCount, setRetryCount] = useState(0);
 
-  // Your exact file path
-  const VIDEO_PATH = '/videos/introVideo.mp4';
-
+  // Play/pause/reset whenever the modal opens or closes.
   useEffect(() => {
-    if (!isOpen) return;
-
     const video = videoRef.current;
     if (!video) return;
 
-    const playVideo = async () => {
-      try {
-        // Reset video
-        video.muted = true;
-        video.playsInline = true;
-        video.currentTime = 0;
-        
-        console.log('🎬 Attempting to play video from:', VIDEO_PATH);
-        console.log('📍 Expected file location: dataodssey/project/public/videos/introVideo.mp4');
-        
-        // Force reload
-        video.load();
-        
-        // Wait for load
-        await new Promise(resolve => setTimeout(resolve, 300));
-        
-        // Try to play
-        await video.play();
-        console.log('✅ Video playing successfully!');
-        setVideoError(false);
-      } catch (err) {
-        console.error('❌ Video play failed:', err);
-        setVideoError(true);
-        
-        // Retry after a delay
-        if (retryCount < 3) {
-          console.log(`🔄 Retry ${retryCount + 1}/3...`);
-          setRetryCount(prev => prev + 1);
-          setTimeout(() => {
-            if (video) {
-              video.load();
-              video.play().catch(console.error);
-            }
-          }, 1000);
-        }
-      }
-    };
-
-    const timer = setTimeout(playVideo, 200);
-    return () => clearTimeout(timer);
-  }, [isOpen, retryCount]);
-
-  // Reset retry count when modal closes
-  useEffect(() => {
-    if (!isOpen) {
-      setRetryCount(0);
+    if (isOpen) {
       setVideoError(false);
-      const video = videoRef.current;
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
+      video.currentTime = 0;
+      // play() returns a promise that rejects if autoplay is blocked or
+      // the source 404s. We only treat real load failures as errors via
+      // onError below — this catch just stops an unhandled rejection
+      // from showing up in the console for benign autoplay blocks.
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+      video.currentTime = 0;
     }
-  }, [isOpen]);
-
-  // Debug: Check if file exists
-  useEffect(() => {
-    if (!isOpen) return;
-
-    // Try to fetch the video file to check if it exists
-    fetch(VIDEO_PATH, { method: 'HEAD' })
-      .then(res => {
-        if (res.ok) {
-          console.log('✅ Video file exists at:', VIDEO_PATH);
-          console.log('📍 Full path: dataodssey/project/public/videos/introVideo.mp4');
-        } else {
-          console.error('❌ Video file NOT found at:', VIDEO_PATH);
-          console.log('Status:', res.status);
-          console.log('📍 Expected path: dataodssey/project/public/videos/introVideo.mp4');
-          console.log('Please ensure the file has been committed and pushed to GitHub');
-        }
-      })
-      .catch(err => {
-        console.error('❌ Error checking video file:', err);
-      });
   }, [isOpen]);
 
   return (
@@ -118,6 +54,7 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
             className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-black border border-cyan-500/30 shadow-[0_0_80px_rgba(0,245,255,0.15)]"
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
               <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs tracking-widest">
@@ -135,23 +72,24 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
             <div className="relative aspect-video bg-black">
               {videoError ? (
                 <div className="flex flex-col items-center justify-center h-full text-white/60 p-4 text-center">
-                  <p className="text-red-400 mb-2 text-lg">⚠️ Video file not found</p>
+                  <p className="text-red-400 mb-2 text-lg">⚠️ Video failed to load</p>
                   <p className="text-sm mb-2">Expected location:</p>
                   <code className="bg-white/10 px-3 py-1 rounded text-cyan-400 text-xs mb-4">
-                    dataodssey/project/public/videos/introVideo.mp4
+                    public{VIDEO_PATH}
                   </code>
                   <p className="text-xs text-white/40 max-w-md mb-4">
-                    The video file might not have been committed/pushed to GitHub yet.
-                    Please ask your collaborator to add the file to the repository.
+                    Make sure the file exists at that path in your repo and has
+                    been committed/pushed. After deploying, you can also check{' '}
+                    <code className="text-cyan-400">yourdomain.com{VIDEO_PATH}</code>{' '}
+                    directly in the browser to confirm it loads.
                   </p>
-                  <button 
+                  <button
                     onClick={() => {
                       setVideoError(false);
-                      setRetryCount(0);
                       const video = videoRef.current;
                       if (video) {
                         video.load();
-                        setTimeout(() => video.play().catch(console.error), 100);
+                        video.play().catch(() => {});
                       }
                     }}
                     className="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded-lg transition"
@@ -168,17 +106,7 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
                   playsInline
                   controls
                   preload="auto"
-                  onError={(e) => {
-                    console.error('❌ Video loading error:', e);
-                    console.log('Failed to load from:', VIDEO_PATH);
-                    console.log('📍 Expected: dataodssey/project/public/videos/introVideo.mp4');
-                    setVideoError(true);
-                  }}
-                  onLoadedData={() => {
-                    console.log('✅ Video loaded successfully from:', VIDEO_PATH);
-                    console.log('📍 Full path: dataodssey/project/public/videos/introVideo.mp4');
-                    setVideoError(false);
-                  }}
+                  onError={() => setVideoError(true)}
                 />
               )}
             </div>
