@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play } from 'lucide-react';
 
@@ -11,6 +11,7 @@ interface AIDemoModalProps {
 
 export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   // ✅ Play video when modal opens
   useEffect(() => {
@@ -21,33 +22,76 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
 
     const playVideo = async () => {
       try {
-        // MUST be set before play
+        // Reset video state
+        video.currentTime = 0;
         video.muted = true;
         video.playsInline = true;
-        video.currentTime = 0;
+        
+        // Make sure video is loaded
+        if (!isVideoReady) {
+          await video.load();
+          setIsVideoReady(true);
+        }
 
-        await video.load(); // important for some browsers
-        await video.play();
+        // Play with user gesture handling
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          await playPromise;
+        }
       } catch (err) {
         console.log('Video play failed:', err);
+        // Fallback: try playing on user interaction
+        const handleUserInteraction = async () => {
+          try {
+            await video.play();
+          } catch (e) {
+            console.log('Fallback play failed:', e);
+          }
+          document.removeEventListener('click', handleUserInteraction);
+        };
+        document.addEventListener('click', handleUserInteraction);
       }
     };
 
-    playVideo();
-  }, [isOpen]);
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(playVideo, 100);
+    return () => clearTimeout(timer);
+  }, [isOpen, isVideoReady]);
 
   // ✅ Stop video when closing
   useEffect(() => {
-    if (!isOpen) return;
-
-    return () => {
+    if (!isOpen) {
       const video = videoRef.current;
       if (video) {
         video.pause();
         video.currentTime = 0;
       }
-    };
+      setIsVideoReady(false);
+    }
   }, [isOpen]);
+
+  // ✅ Handle video loading errors
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleError = (e: Event) => {
+      console.error('Video error:', e);
+    };
+
+    const handleLoadedData = () => {
+      setIsVideoReady(true);
+    };
+
+    video.addEventListener('error', handleError);
+    video.addEventListener('loadeddata', handleLoadedData);
+
+    return () => {
+      video.removeEventListener('error', handleError);
+      video.removeEventListener('loadeddata', handleLoadedData);
+    };
+  }, []);
 
   return (
     <AnimatePresence>
@@ -90,10 +134,10 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
                 ref={videoRef}
                 src="/videos/introVideo.mp4"
                 className="w-full h-full object-cover"
-                autoPlay
                 muted
                 playsInline
                 controls
+                preload="metadata"
               />
             </div>
           </motion.div>
