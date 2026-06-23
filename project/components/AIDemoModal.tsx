@@ -14,8 +14,8 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const [videoError, setVideoError] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
 
-  // The correct path based on your file location
-  const VIDEO_PATH = '/videos/introVideo.mp4';
+  // Your exact file path
+  const VIDEO_PATH = 'dataodssey/project/public/videos/introVideo.mp4';
 
   useEffect(() => {
     if (!isOpen) return;
@@ -31,7 +31,7 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
         video.currentTime = 0;
         
         console.log('🎬 Attempting to play video from:', VIDEO_PATH);
-        console.log('📍 Expected file location: project/public/videos/introVideo.mp4');
+        console.log('📍 Expected file location: dataodssey/project/public/videos/introVideo.mp4');
         
         // Force reload
         video.load();
@@ -87,11 +87,12 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
       .then(res => {
         if (res.ok) {
           console.log('✅ Video file exists at:', VIDEO_PATH);
+          console.log('📍 Full path: dataodssey/project/public/videos/introVideo.mp4');
         } else {
           console.error('❌ Video file NOT found at:', VIDEO_PATH);
           console.log('Status:', res.status);
-          console.log('Please ensure the file is at: project/public/videos/introVideo.mp4');
-          console.log('And that it has been committed/pushed to GitHub');
+          console.log('📍 Expected path: dataodssey/project/public/videos/introVideo.mp4');
+          console.log('Please ensure the file has been committed and pushed to GitHub');
         }
       })
       .catch(err => {
@@ -170,10 +171,12 @@ export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
                   onError={(e) => {
                     console.error('❌ Video loading error:', e);
                     console.log('Failed to load from:', VIDEO_PATH);
+                    console.log('📍 Expected: dataodssey/project/public/videos/introVideo.mp4');
                     setVideoError(true);
                   }}
                   onLoadedData={() => {
                     console.log('✅ Video loaded successfully from:', VIDEO_PATH);
+                    console.log('📍 Full path: dataodssey/project/public/videos/introVideo.mp4');
                     setVideoError(false);
                   }}
                 />
