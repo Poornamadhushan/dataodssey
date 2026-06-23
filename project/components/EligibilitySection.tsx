@@ -29,7 +29,7 @@ const RULES = [
     text: 'text-purple-400',
     items: [
       'Open to all Sri Lankan university students',
-      'Undergraduate & postgraduate welcome',
+      'Undergraduate welcome',
       'Any academic discipline accepted',
       'Valid student enrollment required',
     ],
