@@ -16,7 +16,7 @@ const BADGES = [
   { icon: MapPin, text: 'Sri Lanka' },
 ];
 
-const MS_FORM_URL = 'https://forms.office.com/r/YOUR_FORM_ID'; // Replace with actual MS Form URL
+const MS_FORM_URL = 'https://forms.gle/tPjfxcsFq53ZDJFm7'; // Replace with actual MS Form URL
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
