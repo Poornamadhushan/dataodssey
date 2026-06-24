@@ -11,6 +11,8 @@ import EligibilitySection from '@/components/EligibilitySection';
 import PartnersSection from '@/components/PartnersSection';
 import Footer from '@/components/Footer';
 
+const SHOW_PARTNERS_SECTION = process.env.NEXT_PUBLIC_SHOW_SPONSORSHIP_SECTION === 'true';
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -41,8 +43,12 @@ export default function Home() {
           <TimelineSection />
           <SectionDivider />
           <EligibilitySection />
-          <SectionDivider />
-          <PartnersSection />
+          {SHOW_PARTNERS_SECTION && (
+            <>
+              <SectionDivider />
+              <PartnersSection />
+            </>
+          )}
         </main>
         <Footer />
       </div>

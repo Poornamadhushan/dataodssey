@@ -9,10 +9,9 @@ const MS_FORM_URL = 'https://forms.office.com/r/YOUR_FORM_ID'; // Replace with a
 
 const NAV_ITEMS = [
   { label: 'About', href: '#about', external: false },
+  { label: 'Prizes', href: '#prizes', external: false },
   { label: 'Timeline', href: '#timeline', external: false },
   { label: 'Eligibility', href: '#eligibility', external: false },
-  { label: 'Prizes', href: '#prizes', external: false },
-  { label: 'Partners', href: '#partners', external: false },
   { label: 'Contact', href: '#contact', external: false },
 ];
 
