@@ -12,7 +12,6 @@ const HeroCanvas = dynamic(() => import('./HeroCanvas'), {
 
 const BADGES = [
   { icon: Calendar, text: 'July – August 2026' },
-  { icon: Users, text: 'Multi-Phase Competition' },
   { icon: MapPin, text: 'Sri Lanka' },
 ];
 
@@ -174,8 +173,8 @@ export default function HeroSection() {
           className="mt-14 sm:mt-20 grid grid-cols-3 gap-3 sm:gap-6 lg:gap-8 max-w-sm sm:max-w-md lg:max-w-xl mx-auto"
         >
           {[
-            { value: '10+', label: 'Universities' },
-            { value: '50+', label: 'Teams' },
+            { value: '5+', label: 'Universities' },
+            { value: '12+', label: 'Teams' },
             { value: 'LKR 50K', label: 'Prize Pool' },
           ].map(({ value, label }) => (
             <div key={label} className="text-center">
