@@ -1,11 +1,8 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Users, GraduationCap, Globe, Download, CheckCircle2, UserCheck, AlertCircle, Brain } from 'lucide-react';
-import dynamic from 'next/dynamic';
-
-const AIDemoModal = dynamic(() => import('./AIDemoModal'), { ssr: false });
+import { Users, GraduationCap, Globe, CheckCircle2, UserCheck, AlertCircle } from 'lucide-react';
 
 const RULES = [
   {
@@ -15,10 +12,9 @@ const RULES = [
     bg: 'bg-cyan-500/10',
     text: 'text-cyan-400',
     items: [
-      'Teams of 1 to 4 members',
-      'One designated team leader required',
-      'All members from the same university',
-      'Leader responsible for all submissions',
+    'Teams of 1–4 members',
+    'One designated team leader',
+    'Cross-university teams permitted',
     ],
   },
   {
@@ -28,10 +24,11 @@ const RULES = [
     bg: 'bg-purple-500/10',
     text: 'text-purple-400',
     items: [
-      'Open to all Sri Lankan university students',
-      'Undergraduate welcome',
-      'Any academic discipline accepted',
+    'Open to Sri Lankan university students',
+    'Undergraduate students only',
+    'All academic disciplines welcome',
       'Valid student enrollment required',
+    'Team leader responsible for submissions',
     ],
   },
   {
@@ -41,10 +38,9 @@ const RULES = [
     bg: 'bg-blue-500/10',
     text: 'text-blue-400',
     items: [
-      'Project must relate to AI or Data Science',
-      'Original work developed by the team',
-      'Must solve a real-world problem',
-      'Proposal in PDF format required',
+    'AI or Data Science related',
+    'Original work developed by the team',
+    'Address a real-world problem',
     ],
   },
 ];
@@ -52,7 +48,6 @@ const RULES = [
 export default function EligibilitySection() {
   const titleRef = useRef<HTMLDivElement>(null);
   const inView = useInView(titleRef, { once: true, margin: '-60px' });
-  const [demoOpen, setDemoOpen] = useState(false);
 
   return (
     <>
@@ -126,15 +121,14 @@ export default function EligibilitySection() {
             ))}
           </div>
 
-          {/* Note + Download + Demo */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {/* Important note */}
+          {/* Important note */}
+          <div className="grid grid-cols-1">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="flex gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl glass border border-yellow-500/20 bg-yellow-500/5"
+              className="flex gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl glass border border-yellow-500/20 bg-yellow-500/5 max-w-5xl mx-auto"
             >
               <AlertCircle className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 shrink-0 mt-0.5" />
               <div>
@@ -145,85 +139,13 @@ export default function EligibilitySection() {
                   Important Note
                 </h4>
                 <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  Projects must be original work by the registered team. Plagiarism or use of pre-built commercial solutions leads to immediate disqualification.
+                  Projects should represent original work developed by the participating team. Teams are expected to adhere to ethical and academic standards throughout the competition.
                 </p>
               </div>
-            </motion.div>
-
-            {/* Download guidelines */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex flex-col items-center justify-center gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl glass-card border border-cyan-500/20 text-center"
-            >
-              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                <Download className="w-5 sm:w-6 h-5 sm:h-6 text-cyan-400" />
-              </div>
-              <div>
-                <h4
-                  className="text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2"
-                  style={{ fontFamily: 'Orbitron, sans-serif' }}
-                >
-                  Competition Guidelines
-                </h4>
-                <p className="text-xs sm:text-sm text-white/50 mb-3 sm:mb-4">
-                  Full rules, judging criteria, and submission guidelines.
-                </p>
-              </div>
-              <button className="flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-all shadow-glow-cyan">
-                <Download className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
-                Download Guidelines PDF
-              </button>
-            </motion.div>
-
-            {/* AI Demo button card */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.18 }}
-              className="relative flex flex-col items-center justify-center gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl glass-card border border-blue-500/20 text-center overflow-hidden group"
-            >
-              {/* Animated glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
-
-              <motion.div
-                animate={{ boxShadow: ['0 0 10px rgba(59,130,246,0.2)', '0 0 24px rgba(59,130,246,0.5)', '0 0 10px rgba(59,130,246,0.2)'] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center"
-              >
-                <Brain className="w-5 sm:w-6 h-5 sm:h-6 text-blue-400" />
-              </motion.div>
-
-              <div>
-                <h4
-                  className="text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2"
-                  style={{ fontFamily: 'Orbitron, sans-serif' }}
-                >
-                  AI Demo
-                </h4>
-                <p className="text-xs sm:text-sm text-white/50 mb-3 sm:mb-4">
-                  view our demo viedio
-                </p>
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setDemoOpen(true)}
-                className="relative flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all shadow-[0_0_14px_rgba(59,130,246,0.35)] hover:shadow-[0_0_28px_rgba(59,130,246,0.6)]"
-              >
-                <Brain className="w-3.5 h-3.5" />
-                Demo
-              </motion.button>
             </motion.div>
           </div>
         </div>
       </section>
-
-      <AIDemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
     </>
   );
 }

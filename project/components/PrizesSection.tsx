@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Trophy, Star, Medal, Award, CheckCircle2 } from 'lucide-react';
+import { Trophy, Star, Medal, Award } from 'lucide-react';
 
 const PRIZES = [
   {
@@ -16,7 +16,6 @@ const PRIZES = [
     textColor: 'text-purple-400',
     iconBg: 'bg-purple-500/10',
     badgeBg: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-    lineColor: 'from-purple-500/40',
     featured: false,
     
   },
@@ -31,7 +30,6 @@ const PRIZES = [
     textColor: 'text-cyan-400',
     iconBg: 'bg-cyan-500/10',
     badgeBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-    lineColor: 'from-cyan-500/60',
     featured: true,
    
   },
@@ -46,7 +44,6 @@ const PRIZES = [
     textColor: 'text-blue-400',
     iconBg: 'bg-blue-500/10',
     badgeBg: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-    lineColor: 'from-blue-500/40',
     featured: false,
    
   },
@@ -121,15 +118,6 @@ export default function PrizesSection() {
           ))}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-8 sm:mt-12 text-white/25 text-xs font-mono px-4"
-        >
-          * All participants receive certificates. Top 12 teams advance to the Industry Impact Program.
-        </motion.p>
       </div>
     </section>
   );
@@ -177,16 +165,6 @@ function MobilePrizeCard({ prize, index }: { prize: typeof PRIZES[0]; index: num
         </div>
       </div>
 
-      <div className={`relative z-10 h-px bg-gradient-to-r ${prize.lineColor} to-transparent my-4`} />
-
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-2">
-        {prize.benefits.map((b) => (
-          <div key={b} className="flex items-center gap-2 text-xs text-white/60">
-            <CheckCircle2 className={`w-3.5 h-3.5 ${prize.textColor} shrink-0`} />
-            {b}
-          </div>
-        ))}
-      </div>
     </motion.div>
   );
 }
@@ -239,16 +217,6 @@ function DesktopPrizeCard({ prize, index }: { prize: typeof PRIZES[0]; index: nu
             <div className="text-white/30 text-xs font-mono tracking-widest uppercase">Prize Money</div>
           </div>
 
-          <div className={`h-px bg-gradient-to-r ${prize.lineColor} to-transparent mb-5 xl:mb-6`} />
-
-          <div className="space-y-2.5 xl:space-y-3">
-            {prize.benefits.map((b) => (
-              <div key={b} className="flex items-center gap-2.5 xl:gap-3">
-                <CheckCircle2 className={`w-4 h-4 ${prize.textColor} shrink-0`} />
-                <span className="text-sm text-white/70">{b}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </motion.div>

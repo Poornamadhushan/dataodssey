@@ -4,72 +4,44 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { CalendarDays } from 'lucide-react';
 
-// Current date: June 22, 2026
+// Current date: June 24, 2026
 // past   = already happened
 // live   = happening now / this week (within ~3 days)
 // current = active window open right now
 // upcoming = not yet
 const TIMELINE_EVENTS = [
   {
-    date: 'June 19',
-    title: 'Campaign Launch',
-    desc: 'Official announcement and campaign kickoff for Data Odyssey 2026.',
-    status: 'past',
-    highlight: false,
-  },
-  {
     date: 'June 25',
     title: 'Registration & Proposal Opens',
-    desc: 'Team registration portal and proposal submission system goes live. Get ready to submit your team details and project proposal.',
-    status: 'live',
+    desc: 'Team registration and proposal submission officially open for Data Odyssey 2026.',
+    status: 'upcoming',
     highlight: true,
   },
   {
-    date: 'July 10',
-    title: 'Phase 1 Registration Closes',
-    desc: 'Early registration deadline. Teams registered in Phase 1 receive priority consideration.',
-    status: 'upcoming',
-    highlight: false,
-  },
-  {
-    date: 'July 11',
-    title: 'Phase 2 Registration Opens',
-    desc: 'Second registration window opens for additional teams.',
-    status: 'upcoming',
-    highlight: false,
-  },
-  {
     date: 'July 15',
-    title: 'Registration Locked',
-    desc: 'All team registrations finalized. No further submissions accepted after this date.',
+    title: 'Registration & Proposal Deadline',
+    desc: 'Final deadline for registrations and proposal submissions.',
     status: 'upcoming',
     highlight: false,
   },
   {
     date: 'July 20',
-    title: 'Shortlist Announcement',
-    desc: 'Selected teams are officially notified and confirmed for competition.',
+    title: 'Shortlisted Teams Announced',
+    desc: 'Shortlisted teams are announced and invited to proceed to the next stage.',
     status: 'upcoming',
     highlight: true,
   },
   {
-    date: 'August 5',
-    title: 'Demo Video Deadline',
-    desc: 'Final deadline for shortlisted teams to submit demo videos.',
-    status: 'upcoming',
-    highlight: false,
-  },
-  {
     date: 'August 18',
     title: 'Data Day 2026',
-    desc: 'Industry seminar with guest speakers, panels, and networking sessions.',
+    desc: 'Expert sessions, interactive discussions, networking opportunities, and the Wild Card Round.',
     status: 'upcoming',
     highlight: true,
   },
   {
     date: 'August 21',
     title: 'Data Odyssey Grand Finale',
-    desc: 'Top teams present, compete, and vie for the championship title.',
+    desc: 'Finalist teams present their solutions before the judging panel and celebrate the conclusion of Data Odyssey 2026.',
     status: 'upcoming',
     highlight: true,
   },
@@ -139,13 +111,13 @@ export default function TimelineSection() {
             </span>
           </h2>
           <p className="text-white/50 text-sm sm:text-base lg:text-lg max-w-xl mx-auto">
-            Every great journey has a roadmap. Here's yours.
+            Every great journey has a roadmap. Here&rsquo;s yours.
           </p>
 
           {/* Current date indicator */}
           <div className="inline-flex items-center gap-2 mt-5 px-3 py-1.5 rounded-full bg-cyan-500/8 border border-cyan-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[10px] font-mono text-cyan-400/70 tracking-widest">TODAY — JUNE 22, 2026</span>
+            <span className="text-[10px] font-mono text-cyan-400/70 tracking-widest">TODAY — JUNE 24, 2026</span>
           </div>
         </motion.div>
 
