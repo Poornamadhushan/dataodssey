@@ -18,7 +18,7 @@ const PRIZES = [
     badgeBg: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
     lineColor: 'from-purple-500/40',
     featured: false,
-    benefits: ['Certificate of Distinction', 'Recognition Award', 'Networking Opportunities'],
+    
   },
   {
     rank: 1,
@@ -33,7 +33,7 @@ const PRIZES = [
     badgeBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
     lineColor: 'from-cyan-500/60',
     featured: true,
-    benefits: ['Champion Trophy', 'Certificate of Excellence', 'Industry Recognition', 'Feature on Event Media'],
+   
   },
   {
     rank: 3,
@@ -48,7 +48,7 @@ const PRIZES = [
     badgeBg: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     lineColor: 'from-blue-500/40',
     featured: false,
-    benefits: ['Certificate of Achievement', 'Industry Exposure', 'Participation Recognition'],
+   
   },
 ];
 
@@ -88,9 +88,7 @@ export default function PrizesSection() {
               GLORY
             </span>
           </h2>
-          <p className="text-white/50 text-sm sm:text-base lg:text-lg max-w-xl mx-auto px-2">
-            Cash prizes, prestigious trophies, and career-defining industry recognition.
-          </p>
+        
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
