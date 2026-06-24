@@ -12,8 +12,8 @@ import Image from 'next/image';
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Prizes', href: '#prizes' },
-  { label: 'Timeline', href: '#timeline' },
   { label: 'Eligibility', href: '#eligibility' },
+  { label: 'Timeline', href: '#timeline' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -207,7 +207,7 @@ export default function Footer() {
               </div>
 
               <p className="text-xs sm:text-sm text-white/40 leading-relaxed max-w-xs mb-5">
-                The premier inter-university data science competition and exhibition, shaping the future of AI in Sri Lanka.
+                An inter-university data science competition and exhibition, shaping the future of AI in Sri Lanka.
               </p>
 
               {/* KDU logo + label */}

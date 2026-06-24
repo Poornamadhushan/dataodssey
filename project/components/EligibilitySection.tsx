@@ -1,9 +1,8 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, GraduationCap, Globe, CheckCircle2, UserCheck, AlertCircle, Download, BrainCircuit } from 'lucide-react';
-import AIDemoModal from '@/components/AIDemoModal';
 
 const GUIDELINES_PDF_URL = '/dataodssey/Data_Odyssey_2026_Guidelines.pdf';
 
@@ -51,11 +50,9 @@ const RULES = [
 export default function EligibilitySection() {
   const titleRef = useRef<HTMLDivElement>(null);
   const inView = useInView(titleRef, { once: true, margin: '-60px' });
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   return (
-    <>
-      <section id="eligibility" className="relative py-20 sm:py-24 lg:py-32 bg-[#050816] overflow-hidden">
+    <section id="eligibility" className="relative py-20 sm:py-24 lg:py-32 bg-[#050816] overflow-hidden">
         <div className="absolute inset-0 cyber-grid-bg opacity-10 pointer-events-none" />
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-purple-500/5 blur-[100px] pointer-events-none" />
 
@@ -191,17 +188,9 @@ export default function EligibilitySection() {
               <p className="text-xs sm:text-sm text-white/60 mb-5 sm:mb-6">
                 Watch our AI-powered competition platform walkthrough.
               </p>
-              <button
-                onClick={() => setIsDemoOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-8 py-2.5 text-xs sm:text-sm font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-all duration-300"
-              >
-                Demo
-              </button>
             </motion.div>
           </div>
         </div>
       </section>
-      <AIDemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
-    </>
   );
 }

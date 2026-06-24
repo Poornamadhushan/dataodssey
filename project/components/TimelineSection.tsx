@@ -32,6 +32,13 @@ const TIMELINE_EVENTS = [
     highlight: true,
   },
   {
+    date: 'Aug 12',
+    title: 'Demo Submission Deadline',
+    desc: 'Submit your demo before the deadline and secure your spot for the next stage.',
+    status: 'upcoming',
+    highlight: true,
+  },
+  {
     date: 'August 18',
     title: 'Data Day 2026',
     desc: 'Expert sessions, interactive discussions, networking opportunities, and the Wild Card Round.',

@@ -41,9 +41,9 @@ export default function Home() {
           <SectionDivider />
           <PrizesSection />
           <SectionDivider />
-          <TimelineSection />
-          <SectionDivider />
           <EligibilitySection />
+          <SectionDivider />
+          <TimelineSection />
           <SectionDivider />
           <PastEventsSection />
           {SHOW_PARTNERS_SECTION && (

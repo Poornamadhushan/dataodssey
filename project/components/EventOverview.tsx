@@ -10,7 +10,7 @@ const OVERVIEW_CARDS = [
     title: 'Data Day 2026',
     subtitle: 'coming soon',
     description:
-      'An industry-grade seminar featuring visionary guest speakers from leading technology companies. Gain inspiration, insights, and cutting-edge perspectives on the future of AI and data science.',
+      'Connect, learn, and explore the future of AI and data science with industry experts.',
     icon: Mic2,
     features: ['Expert Sessions', 'Group Discussions', 'Backend Development Session', 'Networking Opportunities'],
     gradient: 'from-cyan-500/10 to-blue-500/5',
@@ -30,7 +30,7 @@ const OVERVIEW_CARDS = [
     title: 'Data Odyssey 2026',
     subtitle: 'August 21, 2026',
     description:
-      'The premier data science competition where university teams tackle real-world challenges using machine learning, predictive modeling, and intelligent automation systems.',
+      'Compete, innovate, and solve real-world challenges through data science and AI.',
     icon: Trophy,
     features: ['Top 12 Finalists', 'Interactive Exhibits', 'Live Judging', 'Award Ceremony'],
     gradient: 'from-purple-500/10 to-blue-500/5',
@@ -105,15 +105,15 @@ export default function EventOverview() {
               fontSize: 'clamp(1.75rem, 6vw, 3.75rem)',
             }}
           >
-            TWO DAYS.{' '}
+            Two Events.{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              INFINITE
+              One
             </span>{' '}
-            IMPACT.
+            Platform.
           </h2>
           <p className="text-white/50 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-2">
-            A two-event experience combining industry knowledge with competitive innovation —
-            designed to shape the next generation of AI leaders.
+            A two-part academic experience uniting expert-led discourse with applied innovation to
+            cultivate the next generation of AI and data science leaders.
           </p>
         </motion.div>
 
