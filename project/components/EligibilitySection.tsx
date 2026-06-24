@@ -189,7 +189,7 @@ export default function EligibilitySection() {
                 AI Demo
               </h4>
               <p className="text-xs sm:text-sm text-white/60 mb-5 sm:mb-6">
-                View our demo video.
+                Watch our AI-powered competition platform walkthrough.
               </p>
               <button
                 onClick={() => setIsDemoOpen(true)}
