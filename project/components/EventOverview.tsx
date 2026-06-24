@@ -66,7 +66,7 @@ const OBJECTIVES = [
   },
   {
     icon: Shield,
-    title: 'Create technologies that deliver meaningful benefits to communities while promoting sustainable progress.',
+    title: 'Societal Impact.',
     desc: 'Develop responsible AI solutions that prioritize fairness and human values.',
     color: 'text-purple-400',
     bg: 'bg-purple-500/10',
