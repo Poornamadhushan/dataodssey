@@ -105,15 +105,14 @@ export default function EventOverview() {
               fontSize: 'clamp(1.75rem, 6vw, 3.75rem)',
             }}
           >
-            Advancing Knowledge.{' '}
+            One Vision{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Inspiring
+            Greater
             </span>{' '}
-            Innovation.
+            Impact.
           </h2>
           <p className="text-white/50 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-2">
-            An integrated academic initiative that combines expert-led discussions with practical problem-solving 
-            to foster excellence in artificial intelligence and data science.
+            Uniting academic discourse and practical innovation on a single platform.
           </p>
         </motion.div>
 
