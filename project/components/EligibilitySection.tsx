@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Users, GraduationCap, Globe, CheckCircle2, UserCheck, AlertCircle, Download, BrainCircuit } from 'lucide-react';
+import { Users, GraduationCap, Globe, CheckCircle2, UserCheck, AlertCircle, Download } from 'lucide-react';
 
 const GUIDELINES_PDF_URL = '/dataodssey/Data_Odyssey_2026_Guidelines.pdf';
 
@@ -172,23 +172,6 @@ export default function EligibilitySection() {
               </a>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.16 }}
-              className="p-5 sm:p-6 rounded-2xl glass-card border border-blue-500/20"
-            >
-              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 sm:mb-5">
-                <BrainCircuit className="w-5 sm:w-6 h-5 sm:h-6 text-blue-400" />
-              </div>
-              <h4 className="text-base sm:text-lg font-bold text-white mb-2" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                AI Demo
-              </h4>
-              <p className="text-xs sm:text-sm text-white/60 mb-5 sm:mb-6">
-                Watch our AI-powered competition platform walkthrough.
-              </p>
-            </motion.div>
           </div>
         </div>
       </section>
