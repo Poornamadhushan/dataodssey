@@ -111,7 +111,7 @@ export default function TimelineSection() {
             </span>
           </h2>
           <p className="text-white/50 text-sm sm:text-base lg:text-lg max-w-xl mx-auto">
-            Every great journey has a roadmap. Here&rsquo;s yours.
+            Every great journey has a roadmap. Here’s yours.
           </p>
 
           {/* Current date indicator */}
