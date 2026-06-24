@@ -1,8 +1,11 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Users, GraduationCap, Globe, CheckCircle2, UserCheck, AlertCircle } from 'lucide-react';
+import { Users, GraduationCap, Globe, CheckCircle2, UserCheck, AlertCircle, Download, BrainCircuit } from 'lucide-react';
+import AIDemoModal from '@/components/AIDemoModal';
+
+const GUIDELINES_PDF_URL = '/dataodssey/Data_Odyssey_2026_Guidelines.pdf';
 
 const RULES = [
   {
@@ -48,6 +51,7 @@ const RULES = [
 export default function EligibilitySection() {
   const titleRef = useRef<HTMLDivElement>(null);
   const inView = useInView(titleRef, { once: true, margin: '-60px' });
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   return (
     <>
@@ -121,14 +125,14 @@ export default function EligibilitySection() {
             ))}
           </div>
 
-          {/* Important note */}
-          <div className="grid grid-cols-1">
+          {/* Important note + actions */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="flex gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl glass border border-yellow-500/20 bg-yellow-500/5 max-w-5xl mx-auto"
+              className="flex gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl glass border border-yellow-500/20 bg-yellow-500/5"
             >
               <AlertCircle className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 shrink-0 mt-0.5" />
               <div>
@@ -143,9 +147,61 @@ export default function EligibilitySection() {
                 </p>
               </div>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="p-5 sm:p-6 rounded-2xl glass-card border border-cyan-500/20"
+            >
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4 sm:mb-5">
+                <Download className="w-5 sm:w-6 h-5 sm:h-6 text-cyan-400" />
+              </div>
+              <h4 className="text-base sm:text-lg font-bold text-white mb-2" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                Competition Guidelines
+              </h4>
+              <p className="text-xs sm:text-sm text-white/60 mb-5 sm:mb-6">
+                Full rules, judging criteria, and submission guidelines.
+              </p>
+              <a
+                href={GUIDELINES_PDF_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-all duration-300 shadow-glow-cyan"
+              >
+                <Download className="w-3.5 h-3.5" />
+                Download Guidelines PDF
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.16 }}
+              className="p-5 sm:p-6 rounded-2xl glass-card border border-blue-500/20"
+            >
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 sm:mb-5">
+                <BrainCircuit className="w-5 sm:w-6 h-5 sm:h-6 text-blue-400" />
+              </div>
+              <h4 className="text-base sm:text-lg font-bold text-white mb-2" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                AI Demo
+              </h4>
+              <p className="text-xs sm:text-sm text-white/60 mb-5 sm:mb-6">
+                View our demo video.
+              </p>
+              <button
+                onClick={() => setIsDemoOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-8 py-2.5 text-xs sm:text-sm font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-all duration-300"
+              >
+                Demo
+              </button>
+            </motion.div>
           </div>
         </div>
       </section>
+      <AIDemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
     </>
   );
 }

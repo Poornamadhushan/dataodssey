@@ -8,6 +8,7 @@ import EventOverview from '@/components/EventOverview';
 import PrizesSection from '@/components/PrizesSection';
 import TimelineSection from '@/components/TimelineSection';
 import EligibilitySection from '@/components/EligibilitySection';
+import PastEventsSection from '@/components/PastEventsSection';
 import PartnersSection from '@/components/PartnersSection';
 import Footer from '@/components/Footer';
 
@@ -43,6 +44,8 @@ export default function Home() {
           <TimelineSection />
           <SectionDivider />
           <EligibilitySection />
+          <SectionDivider />
+          <PastEventsSection />
           {SHOW_PARTNERS_SECTION && (
             <>
               <SectionDivider />
