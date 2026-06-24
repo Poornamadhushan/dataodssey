@@ -96,7 +96,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-sm sm:text-base lg:text-lg text-white/50 font-medium tracking-[0.1em] sm:tracking-widest uppercase mt-4 mb-4 sm:mb-6 px-2"
         >
-          Inter-University Data Science Competition & Exhibition
+          Inter-University Competition & Exhibition
         </motion.p>
 
         {/* Tagline */}
