@@ -164,35 +164,6 @@ export default function HeroSection() {
           </button>
         </motion.div>
 
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ delay: 0.3, duration: 1.0 }}
-          className="mt-14 sm:mt-20 grid grid-cols-3 gap-3 sm:gap-6 lg:gap-8 max-w-sm sm:max-w-md lg:max-w-xl mx-auto"
-        >
-          {[
-            { value: '5+', label: 'Universities' },
-            { value: '12+', label: 'Teams' },
-            { value: 'LKR 50K', label: 'Prize Pool' },
-          ].map(({ value, label }) => (
-            <div key={label} className="text-center">
-              <div
-                className="font-bold text-cyan-400 mb-0.5 sm:mb-1 whitespace-nowrap"
-                style={{
-                  fontFamily: 'Orbitron, sans-serif',
-                  fontSize: 'clamp(0.85rem, 3vw, 1.75rem)',
-                }}
-              >
-                {value}
-              </div>
-              <div className="text-[9px] sm:text-xs text-white/40 uppercase tracking-widest">
-                {label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
