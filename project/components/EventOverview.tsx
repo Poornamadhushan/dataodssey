@@ -6,8 +6,7 @@ import { Mic2, Trophy, Brain, Cpu, Shield, TrendingUp } from 'lucide-react';
 
 const OVERVIEW_CARDS = [
   {
-    id: 'data-day',
-    badge: 'SIDE EVENT',
+    id: 'data-day', 
     title: 'Data Day 2026',
     subtitle: 'coming soon',
     description:
@@ -27,7 +26,6 @@ const OVERVIEW_CARDS = [
   },
   {
     id: 'data-odyssey',
-    badge: 'MAIN EVENT',
     title: 'Data Odyssey 2026',
     subtitle: 'August 21, 2026',
     description:
