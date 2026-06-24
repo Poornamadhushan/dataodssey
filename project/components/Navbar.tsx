@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { label: 'Prizes', href: '#prizes', external: false },
   { label: 'Timeline', href: '#timeline', external: false },
   { label: 'Eligibility', href: '#eligibility', external: false },
+  { label: 'Past Events', href: '#past-events', external: false },
   { label: 'Contact', href: '#contact', external: false },
 ];
 
