@@ -105,15 +105,15 @@ export default function EventOverview() {
               fontSize: 'clamp(1.75rem, 6vw, 3.75rem)',
             }}
           >
-            Two Events.{' '}
+            Advancing Knowledge.{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              One
+            Inspiring
             </span>{' '}
-            Platform.
+            Innovation.
           </h2>
           <p className="text-white/50 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-2">
-            A two-part academic experience uniting expert-led discourse with applied innovation to
-            cultivate the next generation of AI and data science leaders.
+            An integrated academic initiative that combines expert-led discussions with practical problem-solving 
+            to foster excellence in artificial intelligence and data science.
           </p>
         </motion.div>
 
