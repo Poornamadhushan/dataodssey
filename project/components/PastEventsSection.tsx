@@ -187,7 +187,7 @@ export default function PastEventsSection() {
 
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
               {[
-                { label: 'Inter-Faculty Exhibition & Competition' },
+           
                 { label: 'KDU · 2025' },
                 { label: 'Champions: CartConnect' },
               ].map((p) => (
