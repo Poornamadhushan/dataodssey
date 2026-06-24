@@ -22,6 +22,7 @@ const OVERVIEW_CARDS = [
     iconColor: 'text-cyan-400',
     dotColor: 'bg-cyan-400',
     badgeBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+    badge: 'SEMINAR',
     titleColor: 'text-cyan-300',
   },
   {
@@ -41,6 +42,7 @@ const OVERVIEW_CARDS = [
     iconColor: 'text-purple-400',
     dotColor: 'bg-purple-400',
     badgeBg: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+    badge: 'COMPETITION',
     titleColor: 'text-purple-300',
   },
 ];

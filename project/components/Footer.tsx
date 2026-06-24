@@ -14,10 +14,8 @@ const NAV_LINKS = [
   { label: 'Timeline', href: '#timeline' },
   { label: 'Eligibility', href: '#eligibility' },
   { label: 'Prizes', href: '#prizes' },
-  { label: 'Past Events', href: '#past-events' },
-  { label: 'Industry', href: '#industry' },
-  { label: 'Schedule', href: '#schedule' },
   { label: 'Partners', href: '#partners' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 const SOCIAL = [

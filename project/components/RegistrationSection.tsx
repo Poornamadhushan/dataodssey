@@ -114,7 +114,7 @@ export default function RegistrationSection() {
               Registration Successful!
             </h3>
             <p className="text-white/60 text-sm sm:text-base mb-6 sm:mb-8">
-              Your team has been registered. We'll contact your team leader within 5 business days.
+              Your team has been registered. We’ll contact your team leader within 5 business days.
             </p>
             <button
               onClick={() => setSubmitted(false)}

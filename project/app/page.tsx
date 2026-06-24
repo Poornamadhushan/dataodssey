@@ -7,10 +7,7 @@ import HeroSection from '@/components/HeroSection';
 import EventOverview from '@/components/EventOverview';
 import PrizesSection from '@/components/PrizesSection';
 import TimelineSection from '@/components/TimelineSection';
-import ScheduleSection from '@/components/ScheduleSection';
 import EligibilitySection from '@/components/EligibilitySection';
-import PastEventsSection from '@/components/PastEventsSection';
-import IndustryImpact from '@/components/IndustryImpact';
 import PartnersSection from '@/components/PartnersSection';
 import Footer from '@/components/Footer';
 
@@ -43,13 +40,7 @@ export default function Home() {
           <SectionDivider />
           <TimelineSection />
           <SectionDivider />
-          <ScheduleSection />
-          <SectionDivider />
           <EligibilitySection />
-          <SectionDivider />
-          <PastEventsSection />
-          <SectionDivider />
-          <IndustryImpact />
           <SectionDivider />
           <PartnersSection />
         </main>

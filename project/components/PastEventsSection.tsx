@@ -187,7 +187,7 @@ export default function PastEventsSection() {
             </h2>
 
             <p className="text-white/50 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-2">
-              Relive the highlights from our inaugural event — where the next generation of Sri Lanka's data science innovators competed, collaborated, and conquered.
+              Relive the highlights from our inaugural event — where the next generation of Sri Lanka’s data science innovators competed, collaborated, and conquered.
             </p>
 
             {/* Event stat pills */}
