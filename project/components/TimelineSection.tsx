@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { CalendarDays } from 'lucide-react';
 
-// Current date: June 24, 2026
+// Current date: June 25, 2026
 // past   = already happened
 // live   = happening now / this week (within ~3 days)
 // current = active window open right now
@@ -124,7 +124,7 @@ export default function TimelineSection() {
           {/* Current date indicator */}
           <div className="inline-flex items-center gap-2 mt-5 px-3 py-1.5 rounded-full bg-cyan-500/8 border border-cyan-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[10px] font-mono text-cyan-400/70 tracking-widest">TODAY — JUNE 24, 2026</span>
+            <span className="text-[10px] font-mono text-cyan-400/70 tracking-widest"> JUNE— AUGUST, 2026</span>
           </div>
         </motion.div>
 
