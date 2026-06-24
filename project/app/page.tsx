@@ -8,7 +8,7 @@ import EventOverview from '@/components/EventOverview';
 import PrizesSection from '@/components/PrizesSection';
 import TimelineSection from '@/components/TimelineSection';
 import EligibilitySection from '@/components/EligibilitySection';
-import PartnersSection from '@/components/PartnersSection';
+// import PartnersSection from '@/components/PartnersSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -41,8 +41,8 @@ export default function Home() {
           <TimelineSection />
           <SectionDivider />
           <EligibilitySection />
-          <SectionDivider />
-          <PartnersSection />
+          {/* <SectionDivider />
+          <PartnersSection /> */}
         </main>
         <Footer />
       </div>

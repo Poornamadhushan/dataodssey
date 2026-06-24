@@ -11,10 +11,10 @@ import Image from 'next/image';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
+  { label: 'Prizes', href: '#prizes' },
   { label: 'Timeline', href: '#timeline' },
   { label: 'Eligibility', href: '#eligibility' },
-  { label: 'Prizes', href: '#prizes' },
-  { label: 'Partners', href: '#partners' },
+  // { label: 'Sponsorship', href: '#partners' },
   { label: 'Contact', href: '#contact' },
 ];
 

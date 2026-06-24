@@ -12,7 +12,7 @@ const OVERVIEW_CARDS = [
     description:
       'An industry-grade seminar featuring visionary guest speakers from leading technology companies. Gain inspiration, insights, and cutting-edge perspectives on the future of AI and data science.',
     icon: Mic2,
-    features: ['Expert Sessions', 'Group Discussions', 'Wild Card Round', 'Networking Opportunities'],
+    features: ['Expert Sessions', 'Group Discussions', 'Backend Work', 'Networking Opportunities'],
     gradient: 'from-cyan-500/10 to-blue-500/5',
     borderColor: 'border-cyan-500/20',
     hoverBorder: 'hover:border-cyan-500/40',
