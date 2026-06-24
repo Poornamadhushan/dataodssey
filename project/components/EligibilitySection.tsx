@@ -165,7 +165,7 @@ export default function EligibilitySection() {
                 Full rules, judging criteria, and submission guidelines.
               </p>
               <a
-                href={GUIDELINES_PDF_URL}
+                href={"https://drive.google.com/file/d/1ap3lId_irj0LeArdPN0mwQiD71qVxX1r/view?usp=sharing"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-all duration-300 shadow-glow-cyan"
