@@ -12,7 +12,6 @@ const NAV_ITEMS = [
   { label: 'Prizes', href: '#prizes', external: false },
   { label: 'Timeline', href: '#timeline', external: false },
   { label: 'Eligibility', href: '#eligibility', external: false },
-  // { label: 'Sponsorship', href: '#partners', external: false },
   { label: 'Contact', href: '#contact', external: false },
 ];
 

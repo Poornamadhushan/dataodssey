@@ -14,7 +14,6 @@ const NAV_LINKS = [
   { label: 'Prizes', href: '#prizes' },
   { label: 'Timeline', href: '#timeline' },
   { label: 'Eligibility', href: '#eligibility' },
-  // { label: 'Sponsorship', href: '#partners' },
   { label: 'Contact', href: '#contact' },
 ];
 
