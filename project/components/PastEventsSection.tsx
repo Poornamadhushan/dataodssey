@@ -44,7 +44,8 @@ const TAG_COLORS: Record<string, { bg: string; text: string; border: string }> =
   Winners: { bg: 'bg-blue-500/15', text: 'text-blue-300', border: 'border-blue-500/25' },
   Champions: { bg: 'bg-yellow-500/15', text: 'text-yellow-300', border: 'border-yellow-500/25' },
   Champion: { bg: 'bg-yellow-500/15', text: 'text-yellow-300', border: 'border-yellow-500/25' },
-  '1st Runner Up': { bg: 'bg-purple-500/15', text: 'text-purple-300', border: 'border-purple-500/25' },
+  '1st Runner Up': { bg: 'bg-purple-500/15', text: 'text-purple-300', border: 'border-purple-500/25' }
+  'Live Judging': { bg: 'bg-emerald-500/15', text: 'text-emerald-300', border: 'border-emerald-500/25' },
 };
 
 function Lightbox({
