@@ -8,11 +8,11 @@ import { withBasePath } from '@/lib/asset-path';
 
 const PHOTOS = [
   {
-    src: '/Picture1-1.jpg',
-    alt: 'Data Odyssey 2025 — Award Ceremony with Chief Guest',
-    caption: 'Certificate Presentation',
-    tag: 'Champion',
-  },
+    src: '/a5225362-12d9-4860-baee-8313af7de78b.jpg',
+    alt: 'Data Odyssey 2025 — Judges Evaluating Finalist Exhibits',
+    caption: 'Judges Evaluating Finalist Exhibits',
+    tag: 'Live Judging',
+  },,
   {
     src: '/Picture2.jpg',
     alt: 'Data Odyssey 2025 — Certificate Presentation to Winners',
