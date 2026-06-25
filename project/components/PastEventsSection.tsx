@@ -8,10 +8,10 @@ import { withBasePath } from '@/lib/asset-path';
 
 const PHOTOS = [
   {
-    src: '/a5225362-12d9-4860-baee-8313af7de78b.jpg',
-    alt: 'Data Odyssey 2025 — Judges Evaluating Finalist Exhibits',
-    caption: 'Judges Evaluating Finalist Exhibits',
-    tag: 'Live Judging',
+    src: '/Picture1-1.jpg',
+    alt: 'Data Odyssey 2025 — Award Ceremony with Chief Guest',
+    caption: 'Certificate Presentation',
+    tag: 'Champion',
   },
   {
     src: '/Picture2.jpg',
@@ -45,7 +45,6 @@ const TAG_COLORS: Record<string, { bg: string; text: string; border: string }> =
   Champions: { bg: 'bg-yellow-500/15', text: 'text-yellow-300', border: 'border-yellow-500/25' },
   Champion: { bg: 'bg-yellow-500/15', text: 'text-yellow-300', border: 'border-yellow-500/25' },
   '1st Runner Up': { bg: 'bg-purple-500/15', text: 'text-purple-300', border: 'border-purple-500/25' },
-  'Live Judging': { bg: 'bg-emerald-500/15', text: 'text-emerald-300', border: 'border-emerald-500/25' }
 };
 
 function Lightbox({
@@ -62,7 +61,6 @@ function Lightbox({
   onNext: () => void;
 }) {
   const photo = photos[index];
-  if (!photo) return null;
   const tag = TAG_COLORS[photo.tag] ?? TAG_COLORS['Ceremony'];
 
   return (
