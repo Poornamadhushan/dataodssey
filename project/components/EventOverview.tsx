@@ -150,7 +150,7 @@ export default function EventOverview() {
                 >
                   {card.title}
                 </h3>
-                <p className={`text-xs sm:text-sm font-mono mb-3 sm:mb-4 ${card.iconColor}`}>{card.subtitle}</p>
+                {/*<p className={`text-xs sm:text-sm font-mono mb-3 sm:mb-4 ${card.iconColor}`}>{card.subtitle}</p>*/}
                 <p className="text-white/60 leading-relaxed text-sm mb-5 sm:mb-6">{card.description}</p>
 
                 <div className="grid grid-cols-2 gap-2">
