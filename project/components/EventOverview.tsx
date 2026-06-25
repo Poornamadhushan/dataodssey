@@ -8,7 +8,7 @@ const OVERVIEW_CARDS = [
   {
     id: 'data-day', 
     title: 'Data Day 2026',
-    subtitle: 'coming soon',
+    subtitle: 'August 18, 2026',
     description:
       'Connect, learn, and explore the future of AI and data science with industry experts.',
     icon: Mic2,
@@ -136,9 +136,9 @@ export default function EventOverview() {
                   <div className={`w-12 sm:w-14 h-12 sm:h-14 rounded-xl sm:rounded-2xl ${card.iconBg} border ${card.iconBorder} flex items-center justify-center`}>
                     <card.icon className={`w-6 sm:w-7 h-6 sm:h-7 ${card.iconColor}`} />
                   </div>
-                  <span className={`text-[10px] sm:text-xs font-mono px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border ${card.badgeBg}`}>
+                  {/*<span className={`text-[10px] sm:text-xs font-mono px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border ${card.badgeBg}`}>
                     {card.badge}
-                  </span>
+                  </span>*/}
                 </div>
 
                 <h3
@@ -150,7 +150,7 @@ export default function EventOverview() {
                 >
                   {card.title}
                 </h3>
-                {/*<p className={`text-xs sm:text-sm font-mono mb-3 sm:mb-4 ${card.iconColor}`}>{card.subtitle}</p>*/}
+                <p className={`text-xs sm:text-sm font-mono mb-3 sm:mb-4 ${card.iconColor}`}>{card.subtitle}</p>
                 <p className="text-white/60 leading-relaxed text-sm mb-5 sm:mb-6">{card.description}</p>
 
                 <div className="grid grid-cols-2 gap-2">
