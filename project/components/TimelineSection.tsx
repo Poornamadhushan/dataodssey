@@ -32,9 +32,23 @@ const TIMELINE_EVENTS = [
     highlight: true,
   },
   {
-    date: 'Aug 12',
+    date: 'July 22',
+    title: 'Demo Submission Opens',
+    desc: 'Shortlisted teams can begin submitting their demos for evaluation.',
+    status: 'upcoming',
+    highlight: false,
+  },
+  {
+    date: 'Aug 5',
     title: 'Demo Submission Deadline',
     desc: 'Submit your demo before the deadline and secure your spot for the next stage.',
+    status: 'upcoming',
+    highlight: true,
+  },
+  {
+    date: 'Aug 8',
+    title: 'Finalists Announced',
+    desc: 'Finalist teams are announced and invited to present at the Grand Finale.',
     status: 'upcoming',
     highlight: true,
   },
@@ -53,7 +67,6 @@ const TIMELINE_EVENTS = [
     highlight: true,
   },
 ];
-
 const STATUS = {
   past: {
     dot: 'bg-white/20 border-white/20',
