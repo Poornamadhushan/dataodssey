@@ -12,7 +12,7 @@ const PHOTOS = [
     alt: 'Data Odyssey 2025 — Judges Evaluating Finalist Exhibits',
     caption: 'Judges Evaluating Finalist Exhibits',
     tag: 'Live Judging',
-  },,
+  },
   {
     src: '/Picture2.jpg',
     alt: 'Data Odyssey 2025 — Certificate Presentation to Winners',
@@ -62,6 +62,7 @@ function Lightbox({
   onNext: () => void;
 }) {
   const photo = photos[index];
+  if (!photo) return null;
   const tag = TAG_COLORS[photo.tag] ?? TAG_COLORS['Ceremony'];
 
   return (
