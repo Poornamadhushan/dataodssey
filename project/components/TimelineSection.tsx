@@ -55,7 +55,7 @@ const TIMELINE_EVENTS = [
   {
     date: 'August 18',
     title: 'Data Day 2026',
-    desc: 'Expert sessions, interactive discussions, networking opportunities, and the Wild Card Round.',
+    desc: 'A seminar day with expert sessions, panel discussions, and networking — the final lead-up before the Grand Finale.',
     status: 'upcoming',
     highlight: true,
   },
