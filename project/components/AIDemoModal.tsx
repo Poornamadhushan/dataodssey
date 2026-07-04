@@ -15,7 +15,7 @@ interface AIDemoModalProps {
 // since GitHub Pages serves the repo from a folder, not the domain root.
 // Hardcoded directly (rather than via env var) since the env-var/basePath
 // approach was not reliably applying at build time.
-const VIDEO_PATH = '/dataodssey/videos/introVideo.mp4';
+const VIDEO_PATH = '/dataodssey/videos/cv role mapper.mp4';
 
 export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
