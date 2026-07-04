@@ -188,17 +188,17 @@ export default function EligibilitySection() {
               <Play className="w-5 sm:w-6 h-5 sm:h-6 text-purple-400 fill-purple-400" />
             </div>
             <h4 className="text-base sm:text-lg font-bold text-white mb-2" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-              Event Intro Video
+              AI Demo
             </h4>
             <p className="text-xs sm:text-sm text-white/60 mb-5 sm:mb-6">
-              Watch our introduction video to learn more about Data Odyssey 2026.
+              Watch our demo video to see Data Odyssey 2026 in action.
             </p>
             <button
               onClick={() => setDemoOpen(true)}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 hover:border-purple-500/50 rounded-xl transition-all duration-300"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
-              Watch Video
+              Watch Demo
             </button>
           </motion.div>
         </div>
