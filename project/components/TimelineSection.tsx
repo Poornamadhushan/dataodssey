@@ -22,7 +22,7 @@ const TIMELINE_EVENTS = [
     title: 'Registration & Proposal Deadline',
     desc: 'Final deadline for registrations and proposal submissions.',
     status: 'live',
-    highlight: false,
+    highlight: true,
   },
   {
     date: 'July 24',
