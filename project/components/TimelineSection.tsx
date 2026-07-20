@@ -14,14 +14,14 @@ const TIMELINE_EVENTS = [
     date: 'June 25',
     title: 'Registration & Proposal Opens',
     desc: 'Team registration and proposal submission officially open for Data Odyssey 2026.',
-    status: 'live',
+    status: 'past',
     highlight: true,
   },
   {
     date: 'July 19',
     title: 'Registration & Proposal Deadline',
     desc: 'Final deadline for registrations and proposal submissions.',
-    status: 'upcoming',
+    status: 'live',
     highlight: false,
   },
   {
