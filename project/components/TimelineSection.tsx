@@ -21,14 +21,14 @@ const TIMELINE_EVENTS = [
     date: 'July 19',
     title: 'Registration & Proposal Deadline',
     desc: 'Final deadline for registrations and proposal submissions.',
-    status: 'live',
+    status: 'past',
     highlight: true,
   },
   {
     date: 'July 24',
     title: 'Shortlisted Teams Announced',
     desc: 'Shortlisted teams are announced and invited to proceed to the next stage.',
-    status: 'upcoming',
+    status: 'live',
     highlight: true,
   },
   {
