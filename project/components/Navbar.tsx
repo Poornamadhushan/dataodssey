@@ -128,7 +128,7 @@ export default function Navbar() {
             {/* Right side */}
             <div className="flex items-center gap-2 sm:gap-3">
               <button
-                onClick={() => window.open('', '_blank', 'noopener noreferrer')}
+                onClick={() => window.open(, '_blank', 'noopener noreferrer')}
                 className="hidden sm:flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-lg sm:rounded-xl transition-all duration-300 shadow-glow-cyan hover:shadow-glow-lg-cyan whitespace-nowrap"
               >
                 Demo Submission
@@ -181,7 +181,7 @@ export default function Navbar() {
                 </div>
                 <div className="pt-3 pb-2 border-t border-white/[0.04] mt-3">
                   <button
-                    onClick={() => window.open("", '_blank', 'noopener noreferrer')}
+                    onClick={() => window.open( '_blank', 'noopener noreferrer')}
                     className="w-full py-3 text-sm font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-all"
                   >
                     Demo Submission
