@@ -149,7 +149,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="group relative flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-xl overflow-hidden shadow-glow-cyan hover:shadow-glow-lg-cyan transition-all duration-300"
           >
-            <span className="relative z-10">Register Your Team</span>
+            <span className="relative z-10">Demo Submission</span>
             <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform shrink-0" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12" />
           </a>
