@@ -125,15 +125,7 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* Right side */}
             <div className="flex items-center gap-2 sm:gap-3">
-              <button
-                onClick={() => window.open(, '_blank', 'noopener noreferrer')}
-                className="hidden sm:flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-lg sm:rounded-xl transition-all duration-300 shadow-glow-cyan hover:shadow-glow-lg-cyan whitespace-nowrap"
-              >
-                Demo Submission
-              </button>
-
               <button
                 onClick={() => setOpen(!open)}
                 className="lg:hidden w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center rounded-lg text-white/70 hover:text-white hover:bg-white/[0.05] transition-all"
