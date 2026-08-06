@@ -15,7 +15,8 @@ const BADGES = [
   { icon: MapPin, text: 'Sri Lanka' },
 ];
 
-const MS_FORM_URL = 'https://forms.gle/tPjfxcsFq53ZDJFm7'; // Replace with actual MS Form URL
+const DEMO_SUBMISSION_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLScWLmHPBtBGK0VppetRQZovPHoh5QMqXhsTsu8n_sfeEw5ASA/viewform?usp=dialog';
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -144,7 +145,7 @@ export default function HeroSection() {
           className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center items-stretch xs:items-center px-4 sm:px-0"
         >
           <a
-            href={MS_FORM_URL}
+            href={DEMO_SUBMISSION_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-[#050816] bg-cyan-400 hover:bg-cyan-300 rounded-xl overflow-hidden shadow-glow-cyan hover:shadow-glow-lg-cyan transition-all duration-300"
