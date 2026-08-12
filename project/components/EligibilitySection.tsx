@@ -4,8 +4,9 @@ import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, GraduationCap, Globe, CheckCircle2, UserCheck, AlertCircle, Download, Play } from 'lucide-react';
 import AIDemoModal from './AIDemoModal';
+import { withBasePath } from '@/lib/asset-path';
 
-const GUIDELINES_PDF_URL = '/dataodssey/Data_Odyssey_2026_Guidelines.pdf';
+const GUIDELINES_PDF_URL = withBasePath('/Data_Odyssey_2026_Guidelines.pdf');
 
 const RULES = [
   {

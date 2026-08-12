@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -6,7 +8,7 @@ const nextConfig = {
   images: { unoptimized: true },
   output: 'export',
   trailingSlash: true,
-  basePath: '/dataodssey',
-  assetPrefix: '/dataodssey/',
+  basePath: isDev ? undefined : '/dataodssey',
+  assetPrefix: isDev ? undefined : '/dataodssey/',
 };
 module.exports = nextConfig;

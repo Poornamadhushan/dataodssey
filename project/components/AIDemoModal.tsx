@@ -3,19 +3,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play } from 'lucide-react';
+import { withBasePath } from '@/lib/asset-path';
 
 interface AIDemoModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-// This site is deployed to GitHub Pages under a subpath:
-// https://poornamadhushan.github.io/dataodssey/
-// so every asset path must include that "/dataodssey" prefix in production,
-// since GitHub Pages serves the repo from a folder, not the domain root.
-// Hardcoded directly (rather than via env var) since the env-var/basePath
-// approach was not reliably applying at build time.
-const VIDEO_PATH = '/dataodssey/videos/cv role mapper.mp4';
+const VIDEO_PATH = withBasePath('/videos/cv role mapper.mp4');
 
 export default function AIDemoModal({ isOpen, onClose }: AIDemoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);

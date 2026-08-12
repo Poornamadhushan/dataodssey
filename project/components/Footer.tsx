@@ -7,6 +7,7 @@ import {
   Clock, MapPin, ExternalLink, ArrowRight,
 } from 'lucide-react';
 import Image from 'next/image';
+import { withBasePath } from '@/lib/asset-path';
 
 
 const NAV_LINKS = [
@@ -180,7 +181,7 @@ export default function Footer() {
                 {/* AIclub3d — generously sized */}
                 <div className="relative w-16 sm:w-20 h-16 sm:h-20 shrink-0">
                   <Image
-                    src='/dataodssey/images/logos/club3d.png'
+                    src={withBasePath('/images/logos/club3d.png')}
                     alt="DatAInspire Logo"
                     fill
                     className="object-contain drop-shadow-[0_0_10px_rgba(0,245,255,0.2)]"
@@ -214,7 +215,7 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <div className="relative w-12 sm:w-14 h-12 sm:h-14 shrink-0">
                   <Image
-                    src='/dataodssey/images/logos/KDU_Logo.png'
+                    src={withBasePath('/images/logos/KDU_Logo.png')}
                     alt="KDU Logo"
                     fill
                     className="object-contain"

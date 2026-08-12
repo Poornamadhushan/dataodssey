@@ -5,6 +5,7 @@ import Preloader from '@/components/Preloader';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import EventOverview from '@/components/EventOverview';
+import DataDaySection from '@/components/DataDaySection';
 import PrizesSection from '@/components/PrizesSection';
 import TimelineSection from '@/components/TimelineSection';
 import EligibilitySection from '@/components/EligibilitySection';
@@ -38,6 +39,8 @@ export default function Home() {
           <HeroSection />
           <SectionDivider />
           <EventOverview />
+          <SectionDivider />
+          <DataDaySection />
           <SectionDivider />
           <PrizesSection />
           <SectionDivider />

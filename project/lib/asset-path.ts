@@ -1,4 +1,4 @@
-const BASE_PATH = '/dataodssey';
+const BASE_PATH = process.env.NODE_ENV === 'development' ? '' : '/dataodssey';
 
 export function withBasePath(path: string) {
   if (!path || path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
